@@ -44,8 +44,9 @@ init_db()
 
 # Telegram Notification Function
 def send_telegram_notification(name: str, email: str, phone: str, interest: str, message: str):
-    bot_token = os.environ.get("TELEGRAM_BOT_TOKEN")
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
+    # Render environment variable names matched correctly here
+    bot_token = os.environ.get("BOT_TOKEN")
+    chat_id = os.environ.get("CHAT_ID")
     
     if not bot_token or not chat_id:
         print("Telegram configuration missing. Skipping telegram alert.")
