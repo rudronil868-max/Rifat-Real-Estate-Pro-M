@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeEstates | Luxury Real Estate & Private Residences</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: {
+                            400: '#D4AF37',
+                            500: '#C5A059',
+                            600: '#B08D46',
+                        },
+                        navy: {
+                            900: '#0B1325',
+                            800: '#111D35',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(to right, rgba(11, 19, 37, 0.85), rgba(11, 19, 37, 0.45)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-gold-500 selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="fixed w-full z-50 bg-navy-900/90 backdrop-blur-md border-b border-white/10 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-city text-gold-500 text-2xl"></i>
+                    <span class="font-serif text-2xl font-bold tracking-wider text-white">PRIME<span class="text-gold-500">ESTATES</span></span>
+                </div>
+                <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                    <a href="#properties" class="hover:text-gold-400 transition">PROPERTIES</a>
+                    <a href="#services" class="hover:text-gold-400 transition">SERVICES</a>
+                    <a href="#about" class="hover:text-gold-400 transition">ABOUT US</a>
+                    <a href="#contact" class="hover:text-gold-400 transition">CONTACT</a>
+                </nav>
+                <div class="hidden md:block">
+                    <a href="#contact" class="bg-gold-500 hover:bg-gold-600 text-navy-900 font-semibold px-5 py-2.5 rounded-sm transition duration-300 tracking-wide text-xs uppercase">Schedule Consultation</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Hero & Lead Generation Section -->
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 hero-bg min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 text-white space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-gold-500/20 border border-gold-500/40 rounded-full text-gold-400 text-xs font-semibold uppercase tracking-widest">
+                        <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span> US Luxury Real Estate
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                        Find Your Sanctuary of Extraordinary Luxury.
+                    </h1>
+                    <p class="text-slate-300 text-lg sm:text-xl font-light max-w-2xl leading-relaxed">
+                        Access exclusive off-market estates, modern architectural masterpieces, and prime waterfront properties across the United States.
+                    </p>
+                    
+                    <div class="pt-6 grid grid-cols-3 gap-6 border-t border-white/15 max-w-xl">
+                        <div>
+                            <p class="font-serif text-2xl sm:text-3xl font-bold text-gold-400">$4.2B+</p>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Closed Sales</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl sm:text-3xl font-bold text-gold-400">99.4%</p>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Client Satisfaction</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl sm:text-3xl font-bold text-gold-400">15+ Yrs</p>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Industry Leadership</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lead Form Card Right -->
+                <div class="lg:col-span-5" id="contact">
+                    <div class="bg-white rounded-xl shadow-2xl p-6 sm:p-8 border border-slate-100 relative">
+                        <div class="mb-6">
+                            <h2 class="font-serif text-2xl font-bold text-navy-900">Request a Private Showing</h2>
+                            <p class="text-slate-500 text-sm mt-1">Fill out the form below and an estate advisor will connect with you immediately.</p>
+                        </div>
+
+                        <!-- Feedback Alert Box -->
+                        <div id="alertBox" class="hidden mb-5 p-4 rounded-lg text-sm font-medium transition-all"></div>
+
+                        <!-- Contact Form -->
+                        <form id="leadForm" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Full Name *</label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400"><i class="fa-regular fa-user"></i></span>
+                                    <input type="text" id="name" name="name" required placeholder="John Doe" 
+                                        class="w-full pl-10 pr-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent text-sm bg-slate-50/50">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Email Address *</label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400"><i class="fa-regular fa-envelope"></i></span>
+                                    <input type="email" id="email" name="email" required placeholder="john@example.com" 
+                                        class="w-full pl-10 pr-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent text-sm bg-slate-50/50">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="phone" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Phone Number</label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400"><i class="fa-solid fa-phone-flip"></i></span>
+                                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" 
+                                        class="w-full pl-10 pr-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent text-sm bg-slate-50/50">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="interest" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Property Interest</label>
+                                <select id="interest" name="interest" 
+                                    class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent text-sm bg-slate-50/50 text-slate-700">
+                                    <option value="Buying Luxury Property">Buying Luxury Property</option>
+                                    <option value="Selling Property">Selling Property</option>
+                                    <option value="Investment Advisory">Investment Advisory</option>
+                                    <option value="Rental & Leasing">Rental & Leasing</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Message / Requirements</label>
+                                <textarea id="message" name="message" rows="3" placeholder="Tell us about your preferred location, budget, or specifications..." 
+                                    class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent text-sm bg-slate-50/50"></textarea>
+                            </div>
+
+                            <button type="submit" id="submitBtn" 
+                                class="w-full bg-navy-900 hover:bg-navy-800 text-white font-semibold py-3.5 px-6 rounded-lg transition duration-300 flex items-center justify-center gap-2 shadow-lg shadow-navy-900/20 text-sm uppercase tracking-wider mt-2">
+                                <span id="btnText">Submit Request</span>
+                                <i id="btnSpinner" class="fa-solid fa-circle-notch fa-spin hidden"></i>
+                            </button>
+                            
+                            <p class="text-[11px] text-slate-400 text-center mt-3">
+                                <i class="fa-solid fa-lock text-gold-500 mr-1"></i> Your information is secure & strictly confidential.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-slate-400 py-10 border-t border-white/10 text-sm">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-3">
+            <p class="font-serif text-lg text-white font-semibold">PRIMEESTATES LUXURY REAL ESTATE LLC</p>
+            <p>&copy; 2026 PrimeEstates Real Estate Inc. All rights reserved. Equal Housing Opportunity.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Integration -->
+    <script>
+        // Replace this URL with your Render Backend URL if hosted online, e.g. "https://your-app.onrender.com/api/submit"
+        const BACKEND_URL = "http://127.0.0.1:8000/api/submit";
+
+        const form = document.getElementById('leadForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnSpinner = document.getElementById('btnSpinner');
+        const alertBox = document.getElementById('alertBox');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Set UI Loading state
+            submitBtn.disabled = true;
+            btnText.textContent = "Processing...";
+            btnSpinner.classList.remove('hidden');
+            alertBox.classList.add('hidden');
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(BACKEND_URL, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    // Show Success Message
+                    showAlert("success", "Thank you! Your request has been submitted. A confirmation email and alert have been sent.");
+                    form.reset();
+                } else {
+                    // Show Server Error Message
+                    showAlert("error", result.detail || "Failed to submit form. Please try again.");
+                }
+            } catch (error) {
+                console.error("Submission Error:", error);
+                showAlert("error", "Unable to connect to the server. Please check your backend connection.");
+            } finally {
+                // Reset UI Loading state
+                submitBtn.disabled = false;
+                btnText.textContent = "Submit Request";
+                btnSpinner.classList.add('hidden');
+            }
+        });
+
+        function showAlert(type, message) {
+            alertBox.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'border-emerald-300', 'bg-red-50', 'text-red-800', 'border-red-300');
+            
+            if (type === 'success') {
+                alertBox.classList.add('bg-emerald-50', 'text-emerald-800', 'border', 'border-emerald-300');
+                alertBox.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i> ${message}`;
+            } else {
+                alertBox.classList.add('bg-red-50', 'text-red-800', 'border', 'border-red-300');
+                alertBox.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-red-600 mr-2"></i> ${message}`;
+            }
+        }
+    </script>
+</body>
+</html>
